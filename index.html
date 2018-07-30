@@ -301,11 +301,12 @@
     
     var button = document.getElementById("subscribe");
     var date = new Date();
+    var subs = date.getDay()+date.getMonth()*31+date.getYear()*365 - 43257;
     
-    button.innerHTML = date.getDay()+date.getMonth()*31+date.getYear()*365 - 43257 + " Subscribers!";
+    button.innerHTML = subs + " Subscriber" + (subs!==1?"s":"") + "!";
     
     function sub() {
-      button.innerHTML = date.getDay()+date.getMonth()*31+date.getYear()*365 - 43256 + " Subscribers!";
+      button.innerHTML = subs + 1 + " Subscriber" + (subs+1!==1?"s":"") + "!";
     }
     
     function change() {
