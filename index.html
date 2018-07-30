@@ -84,6 +84,19 @@
         display: none;
       }
       
+      #subscribe {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      
       body {
         color: white;
       }
@@ -93,6 +106,7 @@
     <div id="side">
       
       <h1><i>Like</i> and <i>subscribe</i> for more!</h1>
+      <button id="subscribe" onclick="sub();">0 Subscribers!</button>
       <p class="selection"><img src="Line off destenie.png" id="destenie"></p>
       <p>
         The best instrument is cheese<br>
@@ -273,6 +287,15 @@
     var news = [];
     news.push(document.getElementById("News"));
     news.push(document.getElementById("News2"));
+    
+    var button = document.getElementById("subscribe");
+    var date = new Date();
+    
+    button.innerHTML = date.getDay()+date.getMonth()*31+date.getYear()*365 - 43257 + " Subscribers!";
+    
+    function sub() {
+      button.innerHTML = date.getDay()+date.getMonth()*31+date.getYear()*365 - 43256 + " Subscribers!";
+    }
     
     function change() {
       season ++;
