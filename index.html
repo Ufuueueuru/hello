@@ -56,9 +56,17 @@
       }
       
       #fresh {
-        position: absolute;
+        /*position: absolute;
         top: 120px;
-        left: 900px;
+        left: 900px;*/
+        display: inline-block;
+      }
+      
+      #RWH {
+        display: inline-block;
+        width: 200px;
+        margin: 10px;
+        vertical-align: top;
       }
       
       #sponsor {
@@ -73,6 +81,10 @@
       .lyrics {
         display: inline-block;
         margin: 20px;
+        vertical-align: top;
+      }
+      
+      #vid {
         vertical-align: top;
       }
       
@@ -125,11 +137,12 @@
       
       <h1>Hello</h1>
 
-      <video width=500 controls>
+      <video width="500" id="vid" controls>
         <source src="Hello.webm" type="video/webm">
       Your browser does not support this video.
       </video>
-      <img src="RealWaterHours.png" class="selection" width="100px">
+      <img src="RealWaterHours.png" id="RWH" class="selection">
+      <img id=fresh class="selection" src="Fresh.png" width="300">
       
       <div></div>
       <h1>JAZZ BAND, IT'S FRIDAY!</h1>
@@ -275,8 +288,6 @@
         
         
       </div>
-      
-      <img id=fresh class="selection" src="Fresh.png" width=400>
       
       <h5 id="sponsor">Sponsored by Github and Real Water Hours<sup>TM</sup><br>For more content, go to Ufuueueuru's <a href="https://ufuueueuru.github.io/home">home page.</a><br><i><sub>Disclaimer: Real Water Hours is not actually trademarked. All rights not reserved.</sub></i></h5>
     </div>
