@@ -29,6 +29,16 @@
         text-align: center;
         z-index: 2;
       }
+      #chat {
+        display: none;
+        margin: 0px;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        z-index: 5;
+      }
       #body {
         /*position: fixed;
         top: 0px;
@@ -125,6 +135,7 @@
         <a href="https://www.youtube.com/watch?reload=9&v=aT8ix3ZNlLM">Daily Jazz Song 1</a><br>
         <a href="https://www.youtube.com/watch?v=EJcdD51SDAQ">Daily Jazz Song 2</a>
       </h3>
+      <button id="subscribe" onclick="chat();">Open Chat Room</button>
       <p>
         The best instrument is cheese<br>
         <br><br>
@@ -311,12 +322,14 @@
       </div>
       
       <h5 id="sponsor">Sponsored by Github and Real Water Hours<sup>TM</sup><br>For more content, go to Ufuueueuru's <a href="https://ufuueueuru.github.io/home">home page.</a><br><i><sub>Disclaimer: Real Water Hours is not actually trademarked. All rights not reserved.</sub></i></h5>
+      <iframe src="https://docs.google.com/document/d/1qbM2Vc-CqY-G3ZSy7V7KGrVyoDJxIltkhjbq3eSoB8Q/edit?usp=sharing" id="chat">
     </div>
   </body>
   <script>
     var seasons = 1;
     var season = 1;
     var news = [];
+    var chatEl = document.getElementById("chat");
     news.push(document.getElementById("News"));
     news.push(document.getElementById("News2"));
     update();
@@ -326,6 +339,10 @@
     var subs = date.getDay()+date.getMonth()*31+date.getYear()*365 - 43257;
     
     button.innerHTML = subs + " Subscriber" + (subs!==1?"s":"") + "!";
+    
+    function chat() {
+      chatEl.style.display = "block";
+    }
     
     function sub() {
       button.innerHTML = subs + 1 + " Subscriber" + (subs+1!==1?"s":"") + "!";
